@@ -1,6 +1,7 @@
-INSERT INTO afl_mens_period (
+INSERT INTO afl_womens_period (
   marksInside50,
   handballs,
+  positionCode,
   clangers,
   hitoutsToAdvantage,
   penalty50sAgainst,
@@ -15,6 +16,7 @@ INSERT INTO afl_mens_period (
   playerId,
   goals,
   inside50s,
+  jumperNumber,
   disposalEfficiency,
   period,
   blocks,
@@ -32,5 +34,6 @@ INSERT INTO afl_mens_period (
   periodId
 )
 VALUES (
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+  %s, %s, %s
 );

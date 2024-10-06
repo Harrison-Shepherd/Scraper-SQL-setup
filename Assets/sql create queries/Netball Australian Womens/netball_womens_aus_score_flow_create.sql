@@ -1,4 +1,4 @@
-CREATE TABLE netball_womens_aus_score_flow (
+CREATE TABLE netball_womens_australia_score_flow (
   
   -- Period and Timing Information
   period INT DEFAULT NULL,
@@ -22,5 +22,5 @@ CREATE TABLE netball_womens_aus_score_flow (
 
   -- Primary Key and Foreign Key
   PRIMARY KEY (scoreFlowId),  -- Use scoreFlowId as the primary key
-  FOREIGN KEY (matchId) REFERENCES netball_womens_aus_match(matchId)  -- Foreign key linking to match table
+  FOREIGN KEY (matchId) REFERENCES netball_womens_australia_match(matchId)  -- Foreign key linking to match table
 );

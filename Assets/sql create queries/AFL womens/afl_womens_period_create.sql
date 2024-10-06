@@ -37,7 +37,7 @@ CREATE TABLE afl_womens_period (
 
   -- Match Information
   matchId INT NOT NULL,  -- Reference to the match
-  periodId INT NOT NULL,
+  periodId VARCHAR(50) NOT NULL,
 
   -- Keys
   PRIMARY KEY (periodId, playerId),  -- Composite primary key for uniqueness

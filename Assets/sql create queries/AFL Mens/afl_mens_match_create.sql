@@ -36,7 +36,7 @@ CREATE TABLE afl_mens_match (
   kicks INT DEFAULT NULL,
   possessionsContested INT DEFAULT NULL,
   kickEfficiency INT DEFAULT NULL,
-  positionCode CHAR(2) DEFAULT NULL,
+  positionCode VARCHAR(50) DEFAULT NULL,
   clangers INT DEFAULT NULL,
   shortDisplayName VARCHAR(50) DEFAULT NULL,
   freesAgainst INT DEFAULT NULL,

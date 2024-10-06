@@ -14,9 +14,9 @@ from Utils.sport_category import determine_sport_category
 from DatabaseUtils.SqlConnector import connect
 from Utils.logger import setup_logging  # Import setup_logging from logger
 
-# Set up logging to file
+# Set up logging to file, and set the level to ERROR
 log_file = setup_logging('full_scrape.log')
-logging.info("Starting Full Scrape")
+logging.getLogger().setLevel(logging.ERROR)
 
 # Load JSON files for field mappings
 with open("Assets/jsons/unique fields/matchFields.json", "r") as file:
@@ -70,9 +70,6 @@ def insert_data_dynamically(connection, table_name, data_dict, json_fields):
     # Remove duplicates (especially for cases like 'positionCode')
     matched_fields = list(dict.fromkeys(matched_fields))  # Removes duplicates while maintaining order
 
-    # Log matched fields for debugging
-    logging.info(f"Inserting into {table_name}, Matched fields: {matched_fields}")
-
     # Extract the values for the matched fields, ensuring missing fields are set to None (NULL in SQL)
     values = [data_dict.get(field, None) for field in matched_fields]
 
@@ -84,7 +81,6 @@ def insert_data_dynamically(connection, table_name, data_dict, json_fields):
     try:
         cursor.execute(query, values)
         connection.commit()
-        logging.info(f"Successfully inserted data into {table_name}")
     except Exception as e:
         logging.error(f"Error executing query for {table_name}: {e}")
     finally:
@@ -111,7 +107,6 @@ def scrape_entire_database():
         # Step 3: Fetch the fixture for the league
         fixture = ft.fetch_fixture(league_id, '', fixture_id, regulation_periods)
         if fixture.empty:
-            logging.warning(f"No fixture data found for league {league_id}.")
             continue
 
         # Add sportId (initialized to None)
@@ -120,7 +115,6 @@ def scrape_entire_database():
         # Step 4: Iterate through each match in the fixture
         for index, match in fixture.iterrows():
             if match['matchStatus'] in ['scheduled', 'incomplete']:
-                logging.info(f"Skipping match {match['matchId']} due to status {match['matchStatus']}")
                 continue
 
             match_id = match['matchId']
@@ -130,7 +124,6 @@ def scrape_entire_database():
                 league_name,
                 league_id
             )
-            logging.info(f"Identified sport: {sport_category} for league {league_name} with sport ID: {sport_id}")
 
             # Assign sport_id to the fixture row
             fixture.at[index, 'sportId'] = sport_id
@@ -161,7 +154,7 @@ def scrape_entire_database():
                 # Loop through each row (player's stats) in the match_data DataFrame and insert into the match table
                 for index, row in match_data.iterrows():
                     if not row.get('playerId'):
-                        logging.warning(f"Missing playerId for row: {row}")
+                        continue
                     insert_data_dynamically(connection, match_table, row.to_dict(), match_fields)
             except Exception as e:
                 logging.error(f"Error inserting match data into {match_table}: {e}")
@@ -188,7 +181,7 @@ def scrape_entire_database():
                     for index, row in period_data.iterrows():
                         insert_data_dynamically(connection, period_table, row.to_dict(), period_fields)
                 else:
-                    logging.warning(f"No period data found for match {match_id}.")
+                    continue
             except Exception as e:
                 logging.error(f"Error inserting period data into {period_table}: {e}")
 
@@ -208,7 +201,7 @@ def scrape_entire_database():
                     for index, row in score_flow_data.iterrows():
                         insert_data_dynamically(connection, score_flow_table, row.to_dict(), score_flow_fields)
                 else:
-                    logging.warning(f"No score flow data found for match {match_id}.")
+                    continue
             except Exception as e:
                 logging.error(f"Error inserting score flow data into {score_flow_table}: {e}")
 

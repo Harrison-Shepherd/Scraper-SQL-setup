@@ -7,8 +7,9 @@ import Core.League_information as li
 from Utils.logger import setup_logging
 from Utils.sanitize_filename import sanitize_filename  # Import from the new sanitize_filename.py file
 
-# Set up logging for match processing
-setup_logging('match_log.log')  # Log filename, saved in the Logs directory
+# Set up logging for match processing with ERROR level to only log errors
+setup_logging('match_log.log')
+logging.getLogger().setLevel(logging.ERROR)  # Set the logging level to ERROR
 
 def fetch_data(league_id, match_id, fixture_id, sport_id):
     """
@@ -23,8 +24,6 @@ def fetch_data(league_id, match_id, fixture_id, sport_id):
     Returns:
     pd.DataFrame: Processed DataFrame containing match data.
     """
-    logging.info(f"Fetching data for league {league_id} and match {match_id}.")
-
     # Get and sanitize the league name and season
     league_name_and_season = li.get_league_name_and_season(league_id)
     league_name_and_season = sanitize_filename(league_name_and_season)
@@ -74,7 +73,6 @@ def fetch_data(league_id, match_id, fixture_id, sport_id):
         print("Match data:")
         print(box.head())  # Display the first few rows of the match data for inspection
 
-        logging.info(f"Successfully processed data for match {match_id} in league {league_id}.")
         return box
     else:
         logging.warning(f"Player stats not found or incomplete for match {match_id} in league {league_id}.")

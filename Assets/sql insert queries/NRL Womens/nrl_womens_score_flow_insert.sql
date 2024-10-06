@@ -1,6 +1,15 @@
-INSERT INTO nrl_womens_score_flow (
-  scoreFlowId, period, scorepoints, periodSeconds, squadId, playerId, scoreName, matchId
+INSERT INTO NRL_womens_score_flow (
+  period,
+  periodSeconds,
+  distanceCode,
+  scorepoints,
+  scoreName,
+  positionCode,
+  squadId,
+  playerId,
+  matchId,
+  scoreFlowId
 ) 
 VALUES (
-  %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );

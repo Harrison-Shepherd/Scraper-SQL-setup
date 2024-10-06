@@ -1,9 +1,34 @@
 INSERT INTO fast5_womens_fixture (
-  homeSquadScore, awaySquadName, matchType, finalCode, homeSquadId, homeSquadShortCode, 
-  finalShortCode, awaySquadScore, homeSquadNickname, venueName, matchStatus, roundNumber, homeSquadName, utcStartTime, 
-  awaySquadCode, awaySquadNickname, venueId, homeSquadCode, awaySquadId, venueCode, awaySquadShortCode, 
-  localStartTime, matchId, matchNumber, sportId, fixtureId, periodSecs, period, periodCompleted
-) 
+  fixtureId,
+  matchId,
+  matchNumber,
+  matchType,
+  matchStatus,
+  sportId,
+  periodSecs,
+  period,
+  periodCompleted,
+  localStartTime,
+  utcStartTime,
+  homeSquadId,
+  homeSquadName,
+  homeSquadShortCode,
+  homeSquadNickname,
+  homeSquadScore,
+  homeSquadCode,
+  awaySquadId,
+  awaySquadName,
+  awaySquadNickname,
+  awaySquadScore,
+  awaySquadCode,
+  awaySquadShortCode,
+  venueId,
+  venueCode,
+  venueName,
+  roundNumber,
+  finalCode,
+  finalShortCode
+)
 VALUES (
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );

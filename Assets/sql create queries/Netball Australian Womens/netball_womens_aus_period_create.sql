@@ -1,4 +1,4 @@
-CREATE TABLE netball_womens_aus_period (
+CREATE TABLE netball_womens_australia_period (
   
   -- Match Statistics
   rebounds INT DEFAULT NULL,
@@ -66,5 +66,5 @@ CREATE TABLE netball_womens_aus_period (
 
   -- Keys
   PRIMARY KEY (periodId, playerId),  -- Composite primary key for uniqueness
-  FOREIGN KEY (matchId) REFERENCES netball_womens_aus_match(matchId)  -- Foreign key linking to match table
+  FOREIGN KEY (matchId) REFERENCES netball_womens_australia_match(matchId)  -- Foreign key linking to match table
 );

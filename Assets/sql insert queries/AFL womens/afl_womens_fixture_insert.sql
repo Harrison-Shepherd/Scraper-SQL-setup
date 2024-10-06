@@ -1,4 +1,4 @@
-INSERT INTO netball_womens_nz_fixture (
+INSERT INTO afl_womens_fixture (
   fixtureId,
   matchId,
   matchNumber,
@@ -28,7 +28,7 @@ INSERT INTO netball_womens_nz_fixture (
   roundNumber,
   finalCode,
   finalShortCode
-)
+) 
 VALUES (
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );

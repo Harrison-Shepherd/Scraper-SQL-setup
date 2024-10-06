@@ -1,4 +1,4 @@
-CREATE TABLE netball_womens_aus_fixture (
+CREATE TABLE netball_womens_australia_fixture (
   
   -- Fixture Information
   fixtureId INT NOT NULL,

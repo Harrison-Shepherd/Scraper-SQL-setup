@@ -1,9 +1,34 @@
-INSERT INTO nrl_womens_fixture (
-  fixtureId, matchId, matchStatus, roundNumber, matchNumber, homeSquadId, homeSquadName, homeSquadCode, homeSquadShortCode, 
-  homeSquadNickname, awaySquadId, awaySquadName, awaySquadCode, awaySquadShortCode, awaySquadNickname, matchType, 
-  finalShortCode, finalCode, venueId, venueName, venueCode, localStartTime, utcStartTime, homeSquadScore, awaySquadScore, 
-  period, periodCode, periodSecs, sportId
+INSERT INTO NRL_womens_fixture (
+  fixtureId,
+  matchId,
+  matchNumber,
+  matchType,
+  matchStatus,
+  sportId,
+  periodSecs,
+  period,
+  periodCompleted,
+  localStartTime,
+  utcStartTime,
+  homeSquadId,
+  homeSquadName,
+  homeSquadShortCode,
+  homeSquadNickname,
+  homeSquadScore,
+  homeSquadCode,
+  awaySquadId,
+  awaySquadName,
+  awaySquadNickname,
+  awaySquadScore,
+  awaySquadCode,
+  awaySquadShortCode,
+  venueId,
+  venueCode,
+  venueName,
+  roundNumber,
+  finalCode,
+  finalShortCode
 ) 
 VALUES (
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );
