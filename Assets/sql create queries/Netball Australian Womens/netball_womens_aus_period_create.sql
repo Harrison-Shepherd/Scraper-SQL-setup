@@ -3,7 +3,7 @@ CREATE TABLE netball_womens_australia_period (
   -- Match Statistics
   rebounds INT DEFAULT NULL,
   turnoverHeld INT DEFAULT NULL,
-  netPoints DECIMAL(3,2) DEFAULT NULL,
+  netPoints INT DEFAULT NULL,
   centrePassToGoalPerc INT DEFAULT NULL,
   penalties INT DEFAULT NULL,
   deflectionWithNoGain INT DEFAULT NULL,

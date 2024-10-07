@@ -68,7 +68,7 @@ CREATE TABLE fast5_womens_match (
   feeds INT DEFAULT NULL,
   feedWithAttempt INT DEFAULT NULL,
   goalAssists INT DEFAULT NULL,
-  centrePassToGoalPerc DECIMAL(5,2) DEFAULT NULL,
+  centrePassToGoalPerc INT DEFAULT NULL,
   centrePassReceives INT DEFAULT NULL,
   secondPhaseReceive INT DEFAULT NULL,
   

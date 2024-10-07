@@ -3,7 +3,7 @@ CREATE TABLE fast5_mens_match (
   -- Match Statistics
   rebounds INT DEFAULT NULL,
   turnoverHeld INT DEFAULT NULL,
-  centrePassToGoalPerc DECIMAL(5,2) DEFAULT NULL,
+  centrePassToGoalPerc INT DEFAULT NULL,
   penalties INT DEFAULT NULL,
   deflectionWithNoGain INT DEFAULT NULL,
   generalPlayTurnovers INT DEFAULT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE fast5_mens_match (
   pickups INT DEFAULT NULL,
   goals1 INT DEFAULT NULL,
   currentPositionCode VARCHAR(3) DEFAULT NULL,
-  gainToGoalPerc DECIMAL(5,2) DEFAULT NULL,
+  gainToGoalPerc INT DEFAULT NULL,
   intercepts INT DEFAULT NULL,
   goals3 INT DEFAULT NULL,
   goals2 INT DEFAULT NULL,

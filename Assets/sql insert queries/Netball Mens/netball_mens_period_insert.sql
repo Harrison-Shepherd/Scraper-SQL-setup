@@ -11,7 +11,6 @@ INSERT INTO netball_mens_period (
   goalMisses,
   blocked,
   deflectionWithGain,
-  deflectionPossessionGain,
   goalAssists,
   tossUpWin,
   centrePassReceives,
@@ -45,5 +44,5 @@ INSERT INTO netball_mens_period (
 )
 VALUES (
   %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );

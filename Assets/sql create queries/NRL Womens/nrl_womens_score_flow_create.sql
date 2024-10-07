@@ -5,12 +5,10 @@ CREATE TABLE NRL_womens_score_flow (
   periodSeconds INT DEFAULT NULL,
 
   -- Scoring Information
-  distanceCode INT DEFAULT NULL,
   scorepoints INT DEFAULT NULL,
   scoreName VARCHAR(45) DEFAULT NULL,
 
   -- Player and Position Information
-  positionCode VARCHAR(45) DEFAULT NULL,
   squadId INT NOT NULL,
   playerId INT NOT NULL,
 

@@ -3,7 +3,7 @@ CREATE TABLE afl_womens_period (
   -- Match Statistics
   marksInside50 INT DEFAULT NULL,
   handballs INT DEFAULT NULL,
-  positionCode VARCHAR(3) DEFAULT NULL,
+  positionCode VARCHAR(20) DEFAULT NULL,
   clangers INT DEFAULT NULL,
   hitoutsToAdvantage INT DEFAULT NULL,
   penalty50sAgainst INT DEFAULT NULL,

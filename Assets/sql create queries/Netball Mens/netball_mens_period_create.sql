@@ -13,7 +13,6 @@ CREATE TABLE netball_mens_period (
   goalMisses INT DEFAULT NULL,
   blocked INT DEFAULT NULL,
   deflectionWithGain INT DEFAULT NULL,
-  deflectionPossessionGain INT DEFAULT NULL,  
   goalAssists INT DEFAULT NULL,
   tossUpWin INT DEFAULT NULL,
   centrePassReceives INT DEFAULT NULL,

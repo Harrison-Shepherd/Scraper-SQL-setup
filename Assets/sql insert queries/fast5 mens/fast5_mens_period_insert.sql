@@ -11,7 +11,6 @@ INSERT INTO fast5_mens_period (
   goalMisses,
   blocked,
   deflectionWithGain,
-  deflectionPossessionGain,
   goalAssists,
   tossUpWin,
   centrePassReceives,
@@ -51,5 +50,5 @@ INSERT INTO fast5_mens_period (
 )
 VALUES (
   %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+  %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
 );

@@ -38,7 +38,7 @@ CREATE TABLE fast5_womens_period (
   intercepts INT DEFAULT NULL,
   interceptPassThrown INT DEFAULT NULL,
   gain INT DEFAULT NULL,
-  gainToGoalPerc DECIMAL(5,2) DEFAULT NULL,
+  gainToGoalPerc INT DEFAULT NULL,
   pickups INT DEFAULT NULL,
   blocked INT DEFAULT NULL,
   blocks INT DEFAULT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE fast5_womens_period (
   feeds INT DEFAULT NULL,
   feedWithAttempt INT DEFAULT NULL,
   goalAssists INT DEFAULT NULL,
-  centrePassToGoalPerc DECIMAL(5,2) DEFAULT NULL,
+  centrePassToGoalPerc INT DEFAULT NULL,
   centrePassReceives INT DEFAULT NULL,
   secondPhaseReceive INT DEFAULT NULL,
 
