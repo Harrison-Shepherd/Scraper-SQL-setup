@@ -1,4 +1,3 @@
-#DatabaseUUtils/CreateTables.py
 import json
 import os
 from SqlConnector import connect

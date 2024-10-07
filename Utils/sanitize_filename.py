@@ -1,4 +1,3 @@
-# Utils/sanitize_filename.py
 import re
 
 def sanitize_filename(filename):

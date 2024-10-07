@@ -2,7 +2,7 @@ import re
 import os
 import pandas as pd
 import requests
-from Utils.sanitize_filename import sanitize_filename  # Importing the centralized sanitize function
+from Utils.sanitize_filename import sanitize_filename  
 
 # Global dictionary to store league information
 league_info = {}

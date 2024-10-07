@@ -1,7 +1,6 @@
-# Utils/csv_save.py
 import os
 import pandas as pd
-from Utils.sanitize_filename import sanitize_filename  # Import the sanitize function
+from Utils.sanitize_filename import sanitize_filename 
 
 def ensure_directory_exists(directory_path):
     """
@@ -36,7 +35,7 @@ def save_score_flow_to_csv(score_flow_data, league_name_and_season, match_id, ma
     match_dir (str): The directory where the CSV file will be saved.
     """
     ensure_directory_exists(match_dir)
-    clean_league_name = sanitize_filename(league_name_and_season)  # Use the sanitize_filename function
+    clean_league_name = sanitize_filename(league_name_and_season)  
     file_name = f'{clean_league_name} match {match_id} score flow.csv'
     output_csv_path = os.path.join(match_dir, file_name)
 
@@ -50,7 +49,7 @@ def save_period_stats_to_csv(df, match_id, additional_data_dir, league_name_and_
     ensure_directory_exists(additional_data_dir)
     if 'period' in df.columns:
         periods = df['period'].unique()
-        clean_league_name = sanitize_filename(league_name_and_season)  # Use the sanitize_filename function
+        clean_league_name = sanitize_filename(league_name_and_season)  
         
         for i, period in enumerate(periods, start=1):
             period_df = df[df['period'] == period].copy()

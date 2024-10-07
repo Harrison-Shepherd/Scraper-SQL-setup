@@ -1,11 +1,10 @@
-#Core/Fixture.py
 import requests
 import os
 import pandas as pd
 import League_information as li
 from Utils.sport_category import determine_sport_category
 import Utils.csv_save as cs
-from Utils.sanitize_filename import sanitize_filename  # Import the sanitization function
+from Utils.sanitize_filename import sanitize_filename  
 
 def fetch_fixture(league_id, save_directory, fixture_id, regulation_periods):
     """

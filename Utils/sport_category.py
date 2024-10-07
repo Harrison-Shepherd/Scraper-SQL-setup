@@ -21,7 +21,7 @@ def determine_sport_category(regulation_periods, squad_ids, league_name, league_
     sport_category = 'Unknown_Sport'
     sport_id = None
     
-    # Step 1: Strip the year from the league name to prevent interference with filtering
+    # Strip the year from the league name to prevent interference with filtering
     league_name_cleaned = re.sub(r"\(\d{4}\)", "", league_name).strip()  # Remove years in parentheses, e.g., "(2009)"
     
     # AFL Check
@@ -63,7 +63,7 @@ def determine_sport_category(regulation_periods, squad_ids, league_name, league_
     elif league_name_cleaned in afl_womens_leagues:
         return "AFL Womens", 2  # AFL Womens folder
     
-    # Step 2: Squad ID filtering (fallback if not captured by league filtering)
+    # Squad ID filtering (fallback if not captured by league filtering)
     
     # Use the existing squad ID filtering mechanism
     for squad_id in squad_ids:

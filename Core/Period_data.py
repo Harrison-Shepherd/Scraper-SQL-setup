@@ -1,10 +1,9 @@
-# Core/Period_data.py
 import requests
 import logging
 from Utils.logger import setup_logging
 import pandas as pd
-from Utils.sanitize_filename import sanitize_filename  # Import sanitize_filename
-import Utils.csv_save as cs  # Import centralized CSV save functionality
+from Utils.sanitize_filename import sanitize_filename  
+import Utils.csv_save as cs  
 
 # Ensure the logging is set up to track period data specifically
 setup_logging('period_data.log')

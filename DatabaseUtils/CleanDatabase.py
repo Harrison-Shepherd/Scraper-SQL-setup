@@ -1,4 +1,4 @@
-from SqlConnector import connect  # Import the connect function from SqlConnector
+from SqlConnector import connect  
 
 def drop_all_tables(connection):
     """Drop all tables from the current database, including those with foreign key constraints."""
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     if connection:
         try:
             cursor = connection.cursor()
-            cursor.execute("USE `PowerData`;")  # Ensure you use the correct database
+            cursor.execute("USE `PowerData`;")  
             print("Connected to PowerData database.")
             cursor.close()
 

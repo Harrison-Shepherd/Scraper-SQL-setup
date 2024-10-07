@@ -1,4 +1,3 @@
-# DatabaseUtils/ColumnChecker.py
 import pandas as pd
 import MySQLdb
 from SqlConnector import connect
@@ -15,7 +14,7 @@ def check_null_columns_in_all_tables():
 
     cursor = connection.cursor()
 
-    # Step 1: Fetch all table names in the database
+    # Fetch all table names in the database
     cursor.execute("SHOW TABLES")
     tables = cursor.fetchall()
 

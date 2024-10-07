@@ -5,11 +5,11 @@ def connect():
     """Establish and return a connection to the MySQL database using mysql-connector."""
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',  # Localhost
-            port=3306,  # Default MySQL port
-            user='root',  # MySQL root user
-            password='powerdata',  # Your MySQL password
-            database='powerdata'  # Select 'powerdata' database
+            host='127.0.0.1',  
+            port=3306,  
+            user='root',  
+            password='powerdata',  
+            database='powerdata'  
         )
         if connection.is_connected():
             print("Successfully connected to the MySQL database 'powerdata'.")

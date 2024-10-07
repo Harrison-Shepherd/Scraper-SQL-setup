@@ -1,11 +1,10 @@
-#Core/match.py
 import requests
 import pandas as pd
 import numpy as np
 import logging
 import Core.League_information as li
 from Utils.logger import setup_logging
-from Utils.sanitize_filename import sanitize_filename  # Import from the new sanitize_filename.py file
+from Utils.sanitize_filename import sanitize_filename  
 
 # Set up logging for match processing with ERROR level to only log errors
 setup_logging('match_log.log')
@@ -70,8 +69,7 @@ def fetch_data(league_id, match_id, fixture_id, sport_id):
         box = box.drop(columns=['squadNickname', 'squadCode'], errors='ignore')
 
         # Inspect the match data before returning it
-        print("Match data:")
-        print(box.head())  # Display the first few rows of the match data for inspection
+        print(f"Match data inserted for ID:  {match_id}")
 
         return box
     else:

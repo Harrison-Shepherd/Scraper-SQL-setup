@@ -1,7 +1,6 @@
-# Core/Full_scrape.py
 import os
 import sys
-import logging  # Import logging
+import logging  
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import pandas as pd
@@ -12,7 +11,7 @@ import Period_data as pd_data
 import League_information as li
 from Utils.sport_category import determine_sport_category
 from DatabaseUtils.SqlConnector import connect
-from Utils.logger import setup_logging  # Import setup_logging from logger
+from Utils.logger import setup_logging  
 
 # Set up logging to file, and set the level to ERROR
 log_file = setup_logging('full_scrape.log')
@@ -67,7 +66,7 @@ def insert_data_dynamically(connection, table_name, data_dict, json_fields):
     # Find which fields from the data_dict can be inserted into the table (matching columns)
     matched_fields = [field for field in available_fields if field in columns]
 
-    # Remove duplicates (especially for cases like 'positionCode')
+    # Remove duplicates 
     matched_fields = list(dict.fromkeys(matched_fields))  # Removes duplicates while maintaining order
 
     # Extract the values for the matched fields, ensuring missing fields are set to None (NULL in SQL)
@@ -92,10 +91,10 @@ def scrape_entire_database():
         logging.error("Failed to connect to the database.")
         return
 
-    # Step 1: Fetch all leagues
+    #Fetch all leagues
     leagues_df, _ = li.fetch_leagues()
 
-    # Step 2: Iterate through each league
+    # Iterate through each league
     for _, league in leagues_df.iterrows():
         league_id = league['id']
         league_name = league['league_season']  # Use raw league name for filtering
@@ -104,7 +103,7 @@ def scrape_entire_database():
         fixture_year = league['season']
         fixture_id = league['id']
 
-        # Step 3: Fetch the fixture for the league
+        #Fetch the fixture for the league
         fixture = ft.fetch_fixture(league_id, '', fixture_id, regulation_periods)
         if fixture.empty:
             continue
@@ -112,7 +111,7 @@ def scrape_entire_database():
         # Add sportId (initialized to None)
         fixture['sportId'] = None
 
-        # Step 4: Iterate through each match in the fixture
+        # Iterate through each match in the fixture
         for index, match in fixture.iterrows():
             if match['matchStatus'] in ['scheduled', 'incomplete']:
                 continue
