@@ -30,6 +30,15 @@ with open("Assets/jsons/unique fields/periodFields.json", "r") as file:
 with open("Assets/jsons/unique fields/scoreFlowFields.json", "r") as file:
     score_flow_fields = json.load(file)
 
+with open("Assets/jsons/unique fields/squadFields.json", "r") as file:
+    squad_fields = json.load(file)
+
+with open("Assets/jsons/unique fields/playerFields.json", "r") as file:
+    player_fields = json.load(file)
+
+with open("Assets/jsons/unique fields/sportFields.json", "r") as file:
+    sport_fields = json.load(file)
+
 def get_table_columns(connection, table_name):
     """Fetch column names from a given database table."""
     cursor = connection.cursor()

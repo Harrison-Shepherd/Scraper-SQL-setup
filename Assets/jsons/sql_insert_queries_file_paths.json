@@ -59,8 +59,13 @@
     "period_stats": "Assets/sql insert queries/NRL Womens/nrl_womens_period_insert.sql",
     "score_flow": "Assets/sql insert queries/NRL Womens/nrl_womens_score_flow_insert.sql"
   },
-  "misc": {
-    "leagues_information": "Assets/sql insert queries/misc/leagues_information.sql",
-    "squad_information": "Assets/sql insert queries/misc/squad_information.sql"
+  "Players": {
+    "info": "Assets/sql insert queries/Players/Players_info_insert.sql"    
+  },
+  "Sports": {
+    "info": "Assets/sql insert queries/Sports/Sport_info_insert.sql"    
+  },
+  "Squads": {
+    "info": "Assets/sql insert queries/Squads/Squad_info_insert.sql"    
   }
 }
